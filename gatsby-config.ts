@@ -3,16 +3,20 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `PreparationRoom`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: ["gatsby-plugin-emotion", "gatsby-plugin-mdx", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+  plugins: [
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
     },
-    __key: "pages"
-  }]
+  ],
 };
 
 export default config;
