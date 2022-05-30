@@ -1,4 +1,4 @@
-import { MainLayout } from "../components/layouts/MainLayout"; // FIXME なぜかsrcからの相対パスが効かない（ビルドエラーになる）
+import { MainLayout } from "components/layouts/MainLayout"; // FIXME なぜかsrcからの相対パスが効かない（ビルドエラーになる）
 import * as React from "react";
 
 // styles

@@ -6,16 +6,17 @@ const config: GatsbyConfig = {
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
-    "gatsby-plugin-emotion",
-    "gatsby-plugin-mdx",
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: `images`,
+        path: `${__dirname}/src/images/`,
       },
-      __key: "pages",
     },
+    `gatsby-plugin-root-import`,
   ],
 };
 
