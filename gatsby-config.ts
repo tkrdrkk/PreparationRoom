@@ -16,6 +16,13 @@ const config: GatsbyConfig = {
         path: `${__dirname}/src/images/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blogs`,
+        path: `${__dirname}/src/blogs/`,
+      },
+    },
     `gatsby-plugin-root-import`,
   ],
 };
