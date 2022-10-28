@@ -1,16 +1,21 @@
-.container {
-  margin: auto;
-  max-width: 500px;
-  font-family: sans-serif;
+html {
+  background-color: #fae9c7;
 }
 
-.heading {
-  color: rebeccapurple;
+.main {
+  min-height: 100vh;
 }
+
+.container {
+  margin: auto;
+  font-family: "Zen Kaku Gothic New";
+  text-align: center;
+}
+
 .nav-links {
   display: flex;
+  justify-content: center;
   list-style: none;
-  padding-left: 0;
 }
 .nav-link-item {
   padding-right: 2rem;
@@ -24,4 +29,10 @@
   color: gray;
   font-weight: 700;
   margin: 3rem 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
 }

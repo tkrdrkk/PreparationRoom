@@ -1,0 +1,5 @@
+- gatsby-plugin-typegenで自動型生成できる。
+- わかっているルール
+  - コンポーネントとクエリは同梱にする
+  - コンポーネント名とクエリ名は一致させる
+    - BlogPageコンポーネント内にクエリを書くなら`query BlogPageQuery`にする

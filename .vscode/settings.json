@@ -1,5 +1,7 @@
 {
-    "editor.minimap.enabled": false,
-    "editor.cursorBlinking": "expand",
-    "editor.cursorStyle": "block"
+  "editor.minimap.enabled": false,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorStyle": "block",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

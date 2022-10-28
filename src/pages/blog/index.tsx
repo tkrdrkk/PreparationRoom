@@ -1,16 +1,16 @@
 import * as React from "react";
-import { Link, graphql } from "gatsby";
+import { Link, graphql, PageProps } from "gatsby";
 import { Layout } from "../../components/layouts";
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data }: PageProps<GatsbyTypes.BlogPageQueryQuery>) => {
   return (
     <Layout pageTitle="My Blog Posts">
       {data.allMdx.nodes.map((node) => (
         <article key={node.id}>
           <h2>
-            <Link to={`/blog/${node.slug}`}>{node.frontmatter.title}</Link>
+            <Link to={`/blog/${node.slug}`}>{node?.frontmatter?.title}</Link>
           </h2>
-          <p>Posted: {node.frontmatter.date}</p>
+          <p>Posted: {node?.frontmatter?.date}</p>
         </article>
       ))}
     </Layout>
@@ -18,7 +18,7 @@ const BlogPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query {
+  query BlogPageQuery {
     allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         frontmatter {
