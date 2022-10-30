@@ -1,5 +1,5 @@
+import { graphql, Link, PageProps } from "gatsby";
 import * as React from "react";
-import { Link, graphql, PageProps } from "gatsby";
 import { Layout } from "../../components/layouts";
 
 const BlogPage = ({ data }: PageProps<GatsbyTypes.BlogPageQueryQuery>) => {
@@ -8,7 +8,9 @@ const BlogPage = ({ data }: PageProps<GatsbyTypes.BlogPageQueryQuery>) => {
       {data.allMdx.nodes.map((node) => (
         <article key={node.id}>
           <h2>
-            <Link to={`/blog/${node.slug}`}>{node?.frontmatter?.title}</Link>
+            <Link to={`/blog/${node.slug}`} activeStyle={{ color: "blue" }}>
+              {node?.frontmatter?.title}
+            </Link>
           </h2>
           <p>Posted: {node?.frontmatter?.date}</p>
         </article>
@@ -27,6 +29,7 @@ export const query = graphql`
         }
         id
         slug
+        body
       }
     }
   }

@@ -1,30 +1,33 @@
-import { Layout } from "../../components/layouts";
-import React from "react";
-import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { graphql, PageProps } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import React from 'react'
+import { Layout } from '../../components/layouts'
 
 // QUESTION なんでmdx nodeを拾ってくれるの？
-// HACK imageのundefined対応
-const BlogPost = ({ data }) => {
-  const image = getImage(data.mdx.frontmatter.hero_image);
+// FIXME undefined回避できねえ
+const BlogPost = ({ data }: PageProps<GatsbyTypes.BlogPostQueryQuery>) => {
+  const image = getImage(data?.mdx?.frontmatter?.hero_image)
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
-      <p>Posted: {data.mdx.frontmatter.date}</p>
-      <GatsbyImage image={image!} alt={data.mdx.frontmatter.hero_image_alt} />
+    <Layout pageTitle={data?.mdx?.frontmatter?.title || ''}>
+      <p>Posted: {data?.mdx?.frontmatter?.date}</p>
+      <GatsbyImage
+        image={image!}
+        alt={data?.mdx?.frontmatter?.hero_image_alt || ''}
+      />
       <p>
-        Photo Credit:{" "}
-        <a href={data.mdx.frontmatter.hero_image_credit_link}>
-          {data.mdx.frontmatter.hero_image_credit_text}
+        Photo Credit:{' '}
+        <a href={data?.mdx?.frontmatter?.hero_image_credit_link || ''}>
+          {data?.mdx?.frontmatter?.hero_image_credit_text}
         </a>
       </p>
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      <MDXRenderer>{data?.mdx?.body || ''}</MDXRenderer>
     </Layout>
-  );
-};
+  )
+}
 
 export const query = graphql`
-  query ($id: String) {
+  query BlogPostQuery($id: String) {
     mdx(id: { eq: $id }) {
       frontmatter {
         title
@@ -41,6 +44,6 @@ export const query = graphql`
       body
     }
   }
-`;
+`
 
-export default BlogPost;
+export default BlogPost

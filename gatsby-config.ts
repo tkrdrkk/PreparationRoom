@@ -1,4 +1,4 @@
-import type { GatsbyConfig } from "gatsby";
+import type { GatsbyConfig } from 'gatsby'
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -51,7 +51,7 @@ const config: GatsbyConfig = {
               // you may use this to prevent Prism from re-processing syntax.
               // This is an uncommon use-case though;
               // If you're unsure, it's best to use the default value.
-              classPrefix: "language-",
+              classPrefix: 'language-',
               // This is used to allow setting a language for inline code
               // (i.e. single backticks) by creating a separator.
               // This separator is a string and will do no white-space
@@ -81,8 +81,8 @@ const config: GatsbyConfig = {
               // existing language" below.
               languageExtensions: [
                 {
-                  language: "superscript",
-                  extend: "javascript",
+                  language: 'superscript',
+                  extend: 'javascript',
                   definition: {
                     superscript_types: /(SuperType)/,
                   },
@@ -96,8 +96,8 @@ const config: GatsbyConfig = {
               // Customize the prompt used in shell output
               // Values below are default
               prompt: {
-                user: "root",
-                host: "localhost",
+                user: 'root',
+                host: 'localhost',
                 global: false,
               },
               // By default the HTML entities <>&'" are escaped.
@@ -121,34 +121,34 @@ const config: GatsbyConfig = {
         ],
       },
     },
-    `gatsby-plugin-typegen`,
+    'gatsby-plugin-graphql-codegen',
     {
       /* Include plugin */
-      resolve: "gatsby-omni-font-loader",
+      resolve: 'gatsby-omni-font-loader',
 
       /* Plugin options */
       options: {
         /* Font loading mode */
-        mode: "async",
+        mode: 'async',
 
         /* Enable font loading listener to handle FOUT */
         enableListener: true,
 
         /* Preconnect URL-s. This example is for Google Fonts */
-        preconnect: ["https://fonts.gstatic.com"],
+        preconnect: ['https://fonts.gstatic.com'],
 
         /* Web fonts. File link should point to font CSS file. */
         web: [
           {
             /* Exact name of the font as defied in @font-face CSS rule */
-            name: "Zen Kaku Gothic New",
+            name: 'Zen Kaku Gothic New',
             /* URL to the font CSS file with @font-face definition */
-            file: "https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap",
+            file: 'https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap',
           },
         ],
       },
     },
   ],
-};
+}
 
-export default config;
+export default config

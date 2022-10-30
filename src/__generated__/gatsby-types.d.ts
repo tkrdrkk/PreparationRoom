@@ -3961,7 +3961,14 @@ type WebPOptions = {
 type BlogPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type BlogPageQueryQuery = { readonly allMdx: { readonly nodes: ReadonlyArray<{ readonly id: string, readonly slug: string | null, readonly frontmatter: { readonly date: string | null, readonly title: string } | null }> } };
+type BlogPageQueryQuery = { readonly allMdx: { readonly nodes: ReadonlyArray<{ readonly id: string, readonly slug: string | null, readonly body: string, readonly frontmatter: { readonly date: string | null, readonly title: string } | null }> } };
+
+type BlogPostQueryQueryVariables = Exact<{
+  id: InputMaybe<Scalars['String']>;
+}>;
+
+
+type BlogPostQueryQuery = { readonly mdx: { readonly body: string, readonly frontmatter: { readonly title: string, readonly date: string | null, readonly hero_image_alt: string | null, readonly hero_image_credit_link: string | null, readonly hero_image_credit_text: string | null, readonly hero_image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null };
 
 type MyQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
