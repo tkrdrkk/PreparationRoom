@@ -1,5 +1,5 @@
-export type Maybe<T> = T | undefined;
-export type InputMaybe<T> = T | undefined;
+export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
@@ -3964,42 +3964,42 @@ export type MarkdownRemarkSortInput = {
 export type MyQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MyQueryQuery = { site?: { siteMetadata?: { title?: string | undefined } | undefined } | undefined };
+export type MyQueryQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null };
 
 export type BlogPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type BlogPageQueryQuery = { allMdx: { nodes: Array<{ id: string, slug?: string | undefined, body: string, frontmatter?: { date?: any | undefined, title: string } | undefined }> } };
+export type BlogPageQueryQuery = { allMdx: { nodes: Array<{ id: string, slug?: string | null, body: string, frontmatter?: { date?: any | null, title: string } | null }> } };
 
 export type BlogPostQueryQueryVariables = Exact<{
   id?: InputMaybe<Scalars['String']>;
 }>;
 
 
-export type BlogPostQueryQuery = { mdx?: { body: string, frontmatter?: { title: string, date?: any | undefined, hero_image_alt?: string | undefined, hero_image_credit_link?: string | undefined, hero_image_credit_text?: string | undefined, hero_image?: { childImageSharp?: { gatsbyImageData: any } | undefined } | undefined } | undefined } | undefined };
+export type BlogPostQueryQuery = { mdx?: { body: string, frontmatter?: { title: string, date?: any | null, hero_image_alt?: string | null, hero_image_credit_link?: string | null, hero_image_credit_text?: string | null, hero_image?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } | null };
 
-export type GatsbyImageSharpFixedFragment = { base64?: string | undefined, width: number, height: number, src: string, srcSet: string };
+export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 
-export type GatsbyImageSharpFixed_TracedSvgFragment = { tracedSVG?: string | undefined, width: number, height: number, src: string, srcSet: string };
+export type GatsbyImageSharpFixed_TracedSvgFragment = { tracedSVG?: string | null, width: number, height: number, src: string, srcSet: string };
 
-export type GatsbyImageSharpFixed_WithWebpFragment = { base64?: string | undefined, width: number, height: number, src: string, srcSet: string, srcWebp?: string | undefined, srcSetWebp?: string | undefined };
+export type GatsbyImageSharpFixed_WithWebpFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string, srcWebp?: string | null, srcSetWebp?: string | null };
 
-export type GatsbyImageSharpFixed_WithWebp_TracedSvgFragment = { tracedSVG?: string | undefined, width: number, height: number, src: string, srcSet: string, srcWebp?: string | undefined, srcSetWebp?: string | undefined };
+export type GatsbyImageSharpFixed_WithWebp_TracedSvgFragment = { tracedSVG?: string | null, width: number, height: number, src: string, srcSet: string, srcWebp?: string | null, srcSetWebp?: string | null };
 
 export type GatsbyImageSharpFixed_NoBase64Fragment = { width: number, height: number, src: string, srcSet: string };
 
-export type GatsbyImageSharpFixed_WithWebp_NoBase64Fragment = { width: number, height: number, src: string, srcSet: string, srcWebp?: string | undefined, srcSetWebp?: string | undefined };
+export type GatsbyImageSharpFixed_WithWebp_NoBase64Fragment = { width: number, height: number, src: string, srcSet: string, srcWebp?: string | null, srcSetWebp?: string | null };
 
-export type GatsbyImageSharpFluidFragment = { base64?: string | undefined, aspectRatio: number, src: string, srcSet: string, sizes: string };
+export type GatsbyImageSharpFluidFragment = { base64?: string | null, aspectRatio: number, src: string, srcSet: string, sizes: string };
 
 export type GatsbyImageSharpFluidLimitPresentationSizeFragment = { maxHeight: number, maxWidth: number };
 
-export type GatsbyImageSharpFluid_TracedSvgFragment = { tracedSVG?: string | undefined, aspectRatio: number, src: string, srcSet: string, sizes: string };
+export type GatsbyImageSharpFluid_TracedSvgFragment = { tracedSVG?: string | null, aspectRatio: number, src: string, srcSet: string, sizes: string };
 
-export type GatsbyImageSharpFluid_WithWebpFragment = { base64?: string | undefined, aspectRatio: number, src: string, srcSet: string, srcWebp?: string | undefined, srcSetWebp?: string | undefined, sizes: string };
+export type GatsbyImageSharpFluid_WithWebpFragment = { base64?: string | null, aspectRatio: number, src: string, srcSet: string, srcWebp?: string | null, srcSetWebp?: string | null, sizes: string };
 
-export type GatsbyImageSharpFluid_WithWebp_TracedSvgFragment = { tracedSVG?: string | undefined, aspectRatio: number, src: string, srcSet: string, srcWebp?: string | undefined, srcSetWebp?: string | undefined, sizes: string };
+export type GatsbyImageSharpFluid_WithWebp_TracedSvgFragment = { tracedSVG?: string | null, aspectRatio: number, src: string, srcSet: string, srcWebp?: string | null, srcSetWebp?: string | null, sizes: string };
 
 export type GatsbyImageSharpFluid_NoBase64Fragment = { aspectRatio: number, src: string, srcSet: string, sizes: string };
 
-export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = { aspectRatio: number, src: string, srcSet: string, srcWebp?: string | undefined, srcSetWebp?: string | undefined, sizes: string };
+export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = { aspectRatio: number, src: string, srcSet: string, srcWebp?: string | null, srcSetWebp?: string | null, sizes: string };
