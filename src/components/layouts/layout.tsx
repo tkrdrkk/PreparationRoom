@@ -5,7 +5,6 @@ import { ReactNode } from 'react'
 import {
   container,
   footer,
-  heading,
   main,
   navLinkItem,
   navLinks,
@@ -13,10 +12,10 @@ import {
   siteTitle,
 } from './layout.module.css'
 
-const NaviItem = ({ path, view }: { path: string; view: string }) => (
+const NaviItem = ({ path, viewName }: { path: string; viewName: string }) => (
   <li className={navLinkItem}>
     <Link to={path} className={navLinkText}>
-      {view}
+      {viewName}
     </Link>
   </li>
 )
@@ -45,16 +44,16 @@ export const Layout = ({
       <nav>
         <ul className={navLinks}>
           {[
-            { path: '/', view: 'Home' },
-            { path: '/about', view: 'About' },
-            { path: '/blog', view: 'Blogs' },
+            { path: '/', viewName: 'Home' },
+            { path: '/about', viewName: 'About' },
+            { path: '/blog', viewName: 'Blogs' },
           ].map((n) => (
-            <NaviItem key={n.view} {...n} />
+            <NaviItem key={n.viewName} {...n} />
           ))}
         </ul>
       </nav>
       <main className={main}>
-        <h1 className={heading}>{pageTitle}</h1>
+        <h1>{pageTitle}</h1>
         {children}
       </main>
       <footer className={footer}>

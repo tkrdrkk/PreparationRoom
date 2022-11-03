@@ -6,7 +6,6 @@ import { Layout } from '../../components/layouts'
 // QUESTION なんでmdx nodeを拾ってくれるの？
 // FIXME undefined回避できねえ
 const BlogPost = ({ data }: PageProps<GatsbyTypes.BlogPostQueryQuery>) => {
-  // const image = getImage(data?.mdx?.frontmatter?.hero_image)
   return (
     <Layout pageTitle={data?.mdx?.frontmatter?.title || ''}>
       <p>Posted: {data?.mdx?.frontmatter?.date}</p>
@@ -16,16 +15,6 @@ const BlogPost = ({ data }: PageProps<GatsbyTypes.BlogPostQueryQuery>) => {
           boxShadow: '4px 0px 4px 1px rgba(0,0,0,0.6)',
         }}
       />
-      {/* <GatsbyImage
-        image={image!}
-        alt={data?.mdx?.frontmatter?.hero_image_alt || ''}
-      />
-      <p>
-        Photo Credit:{' '}
-        <a href={data?.mdx?.frontmatter?.hero_image_credit_link || ''}>
-          {data?.mdx?.frontmatter?.hero_image_credit_text}
-        </a>
-      </p> */}
       <MDXRenderer>{data?.mdx?.body || ''}</MDXRenderer>
     </Layout>
   )
